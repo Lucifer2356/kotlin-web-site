@@ -15,9 +15,9 @@ or labeled [function literal with receiver](lambdas.md#function-literals-with-re
  where `@label` is a [label](returns.md) on the scope `this` is meant to be from:
 
 ```kotlin
-class A { // implicit label @A
-    inner class B { // implicit label @B
-        fun Int.foo() { // implicit label @foo
+class A {  implicit label @A
+    inner class B {  implicit label @B
+        fun Int.foo() {  implicit label @foo
             val a = this@A // A's this
             val b = this@B // B's this
 
@@ -45,7 +45,7 @@ If you have a non-member function with the same name, use this with caution beca
 
 ```kotlin
 fun main() {
-//sampleStart
+sampleStart
     fun printLine() { println("Top-level function") }
     
     class A {
@@ -59,7 +59,7 @@ fun main() {
     
     A().invokePrintLine() // Member function
     A().invokePrintLine(omitThis = true) // Top-level function
-//sampleEnd()
+sampleEnd()
 }
 ```
 {kotlin-runnable="true" kotlin-min-compiler-version="1.3"}
